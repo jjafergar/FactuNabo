@@ -112,15 +112,15 @@ def enable_windows_backdrop(win_id, dark_mode: bool = False):
     except Exception:
         pass
 
-# --- Colores/Recursos - iOS 26 Palette ---
-COLOR_PRIMARY = "#007AFF"      # Azul iOS 26
+# --- Colores/Recursos ---
+COLOR_PRIMARY = "#A0BF6E"      # Verde corporativo
 COLOR_SUCCESS = "#34C759"      # Verde iOS
-COLOR_WARNING = "#FF9F0A"      # Naranja iOS 26 (actualizado)
+COLOR_WARNING = "#FF9F0A"      # Naranja iOS 26
 COLOR_ERROR = "#FF3B30"        # Rojo iOS
-COLOR_BACKGROUND = "#F5F5F7"   # Fondo claro iOS 26 (más suave)
+COLOR_BACKGROUND = "#F5F5F7"   # Fondo claro
 COLOR_CARD = "#FFFFFF"         # Blanco puro
-COLOR_TEXT = "#1D1D1F"         # Negro suave iOS
-COLOR_SECONDARY_TEXT = "#86868B"  # Gris secundario iOS
+COLOR_TEXT = "#1D1D1F"         # Negro suave
+COLOR_SECONDARY_TEXT = "#86868B"  # Gris secundario
 COLOR_BORDER = "#D1D1D6"       # Borde suave
 COLOR_SIDEBAR = "#FFFFFF"      # Sidebar blanco
 COLOR_SIDEBAR_DARK = "#1C1C1E" # Sidebar oscuro

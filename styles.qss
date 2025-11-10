@@ -70,11 +70,11 @@ QListWidget[class="NavList"]::item {
 
 /* Hover más sutil y suave */
 QListWidget[class="NavList"]::item:hover {
-    background-color: rgba(0, 0, 0, 0.05); /* Hover muy sutil */
+    background-color: rgba(160, 191, 110, 0.15); /* Hover verde corporativo */
 }
 
 QListWidget[class="NavList"]::item:selected {
-    background-color: #007AFF; /* Azul iOS 26 */
+    background-color: #A0BF6E; /* Verde corporativo */
     color: white;
     font-weight: 600;
 }
@@ -88,8 +88,8 @@ QMainWindow[theme="dark"] QListWidget[class="NavList"]::item:hover {
 }
 
 QMainWindow[theme="dark"] QListWidget[class="NavList"]::item:selected {
-    background-color: #0A84FF; /* Azul brillante iOS oscuro */
-    color: #FFFFFF;
+    background-color: #5AC8FA; /* Cian brillante */
+    color: #000000; /* Texto oscuro para contraste */
 }
 
 /* ──────────────────────────────────────────────────────────────
@@ -145,28 +145,26 @@ QMainWindow[theme="dark"] QFrame[class="StatCard"] {
 }
 
 /* ──────────────────────────────────────────────────────────────
-   🔘  ANIMATED BUTTON (botón primario) - iOS 26 Style
-   - Altura iOS de 48-50px
-   - Bordes más redondeados (14px)
-   - Colores iOS 26 más vibrantes
+   🔘  ANIMATED BUTTON (botón primario) - Estilo corporativo
+   - Colores corporativos (verde)
+   - Tamaño original optimizado
 ────────────────────────────────────────────────────────────── */
 QPushButton[class="AnimatedButton"] {
-    background-color: #007AFF; /* Azul iOS 26 */
+    background-color: #A0BF6E; /* Verde corporativo */
     color: white;
-    border-radius: 14px; /* Bordes más redondeados */
-    padding: 14px 28px; /* Padding para altura ~48-50px */
+    border-radius: 12px; /* Bordes redondeados */
+    padding: 10px 24px; /* Padding original */
     font-weight: 600;
-    font-size: 16px;
-    min-height: 48px; /* Altura mínima iOS */
+    font-size: 15px;
 }
 
 /* Hover más sutil */
 QPushButton[class="AnimatedButton"]:hover {
-    background-color: #0051D5; /* Azul más oscuro */
+    background-color: #87A15D; /* Verde más oscuro */
 }
 
 QPushButton[class="AnimatedButton"]:pressed {
-    background-color: #004FC4; /* Azul presionado */
+    background-color: #7A9154; /* Verde presionado */
 }
 
 QPushButton[class="AnimatedButton"]:disabled {
@@ -175,12 +173,12 @@ QPushButton[class="AnimatedButton"]:disabled {
 }
 
 QMainWindow[theme="dark"] QPushButton[class="AnimatedButton"] {
-    background-color: #0A84FF; /* Azul brillante oscuro */
-    color: #FFFFFF;
+    background-color: #5AC8FA; /* Cian brillante */
+    color: #000000; /* Texto oscuro para contraste */
 }
 
 QMainWindow[theme="dark"] QPushButton[class="AnimatedButton"]:hover {
-    background-color: #0070E0;
+    background-color: #4FB6E8;
 }
 
 QMainWindow[theme="dark"] QPushButton[class="AnimatedButton"]:disabled {
@@ -225,7 +223,7 @@ QTableWidget[class="ModernTable"] {
     border: none;                            /* sin borde propio */
     border-radius: 16px;
     gridline-color: #F2F2F7;
-    selection-background-color: rgba(0, 122, 255, 0.15); /* Tinte primario */
+    selection-background-color: rgba(160, 191, 110, 0.15); /* Tinte primario */
     outline: none;
 }
 
@@ -242,12 +240,12 @@ QTableWidget[class="ModernTable"]::item {
 }
 
 QTableWidget[class="ModernTable"]::item:selected {
-    background-color: rgba(0, 122, 255, 0.25); /* Tinte primario */
+    background-color: rgba(160, 191, 110, 0.25); /* Tinte primario */
 }
 
 /* [MEJORA UI] Hover más evidente */
 QTableWidget[class="ModernTable"]::item:hover {
-    background-color: rgba(0, 122, 255, 0.12); /* Tinte primario (un poco más opaco) */
+    background-color: rgba(160, 191, 110, 0.12); /* Tinte primario (un poco más opaco) */
 }
 
 QTableWidget[class="ModernTable"] QHeaderView::section {
@@ -328,7 +326,7 @@ QLineEdit {
 
 /* [MODIFICADO] Foco más sutil, usando 1px del color primario */
 QLineEdit:focus {
-    border: 1px solid #007AFF;
+    border: 1px solid #A0BF6E;
     padding: 12px 16px; /* Mismo padding, sin salto */
 }
 
@@ -384,7 +382,7 @@ QProgressBar {
 
 QProgressBar::chunk {
     /* [MODIFICADO] Usamos el color primario */
-    background-color: #007AFF;
+    background-color: #A0BF6E;
     border-radius: 4px;
 }
 
@@ -414,8 +412,8 @@ QCheckBox::indicator {
 }
 
 QCheckBox::indicator:checked {
-    background-color: #007AFF; /* Color primario */
-    border: 2px solid #007AFF;
+    background-color: #A0BF6E; /* Color primario */
+    border: 2px solid #A0BF6E;
     /* Icono ✓ en base64 (SVG) */
     image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTAiIHZpZXdCb3g9IjAgMCAxMiAxMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMSA1TDQuNSA4LjVMMTEgMSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=);
 }
@@ -487,9 +485,9 @@ QLabel[class="StepCircle"][state="pending"] {
 }
 
 QLabel[class="StepCircle"][state="active"] {
-    background-color: #007AFF; /* Color primario */
+    background-color: #A0BF6E; /* Color primario */
     color: white;
-    border: 2px solid #007AFF;
+    border: 2px solid #A0BF6E;
 }
 
 QLabel[class="StepCircle"][state="completed"] {
@@ -572,7 +570,7 @@ QToolButton {
 }
 
 QToolButton:hover {
-    background-color: rgba(0, 122, 255, 0.12); /* Tinte primario */
+    background-color: rgba(160, 191, 110, 0.12); /* Tinte primario */
 }
 
 QMainWindow[theme="dark"] QToolButton:hover {
@@ -657,7 +655,7 @@ QDialog[theme="dark"] QLineEdit::placeholder {
 
 /* Botón primario (AnimatedButton) dentro de diálogos */
 QDialog QPushButton[class="AnimatedButton"] {
-    background-color: #007AFF;
+    background-color: #A0BF6E;
     color: white;
     padding: 10px 24px;
 }
@@ -795,7 +793,7 @@ QComboBox {
     font-size: 14px;
 }
 QComboBox:focus {
-    border: 1px solid #007AFF; /* Foco primario */
+    border: 1px solid #A0BF6E; /* Foco primario */
 }
 QComboBox::drop-down {
     border: none;
@@ -809,7 +807,7 @@ QComboBox::down-arrow {
 QComboBox QAbstractItemView {
     background: white;
     border: 1px solid #D1D1D6;
-    selection-background-color: rgba(0, 122, 255, 0.15); /* Tinte primario */
+    selection-background-color: rgba(160, 191, 110, 0.15); /* Tinte primario */
 }
 
 QMainWindow[theme="dark"] QComboBox {
@@ -881,7 +879,7 @@ QPushButton[class="LinkButton"] {
 }
 QPushButton[class="LinkButton"]:hover {
     background-color: transparent;
-    color: #007AFF; /* Color de enlace hover */
+    color: #A0BF6E; /* Color de enlace hover */
     text-decoration: underline;
 }
 QMainWindow[theme="dark"] QPushButton[class="LinkButton"],
