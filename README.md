@@ -1,21 +1,21 @@
 # FactuNabo
 
-Programa moderno para emitir y gestionar facturas con interfaz estilo **iOS 26** (Apple Design).
+Programa moderno para emitir y gestionar facturas con interfaz modernizada.
 
-## ✨ Características iOS 26
+## ✨ Características de Diseño
 
-La aplicación implementa los principios de diseño más recientes de iOS 26:
+La aplicación implementa principios de diseño modernos con identidad corporativa:
 
 ### 🎨 Diseño Visual
-- **Minimalismo extremo**: Interfaz limpia sin elementos innecesarios
-- **Colores suaves**: Paleta de colores pasteles oficial de iOS 26
-  - Azul primario: `#007AFF` (iOS Blue)
+- **Minimalismo**: Interfaz limpia sin elementos innecesarios
+- **Colores corporativos**: 
+  - Verde primario: `#A0BF6E` (Color corporativo)
   - Verde: `#34C759` (Success)
-  - Naranja: `#FF9F0A` (Warning actualizado a iOS 26)
+  - Naranja: `#FF9F0A` (Warning modernizado)
   - Rojo: `#FF3B30` (Error)
-- **Esquinas ultra-redondeadas**: Bordes de 14-20px para mayor suavidad
+- **Esquinas redondeadas**: Bordes de 12-20px para mayor suavidad
 - **Efecto vidrio**: Backgrounds translúcidos con blur (glassmorphism)
-- **Sombras sutiles**: Sombras con alpha muy bajo (25-35) para profundidad sutil
+- **Sombras sutiles**: Sombras con alpha bajo para profundidad sutil
 
 ### 🔤 Tipografía
 - Fuente similar a **SF Pro Display/Text** de Apple
@@ -73,11 +73,11 @@ Ejecuta la aplicación:
 python main.py
 ```
 
-## 🎨 Paleta de Colores iOS 26
+## 🎨 Paleta de Colores
 
 | Color | Hex | Uso |
 |-------|-----|-----|
-| Azul iOS | `#007AFF` | Botones primarios, elementos seleccionados |
+| Verde corporativo | `#A0BF6E` | Botones primarios, elementos seleccionados |
 | Verde | `#34C759` | Éxito, confirmaciones |
 | Naranja | `#FF9F0A` | Advertencias |
 | Rojo | `#FF3B30` | Errores, acciones destructivas |
