@@ -1,22 +1,23 @@
-/* styles.qss - Modern iOS 18 / macOS Sequoia / Material Design 3 inspired */
+/* styles.qss - Modern iOS 26 Inspired Design - Minimalist & Refined */
 
 /* ──────────────────────────────────────────────────────────────
-   🎛️  GLOBAL: Tipografías y fondo
-   - Cambia la FUENTE por defecto aquí (font-family / font-size).
+   🎛️  GLOBAL: Tipografías y fondo (iOS 26 Style)
+   - Fuente moderna similar a SF Pro
+   - Fondo suave y minimalista
 ────────────────────────────────────────────────────────────── */
 * {
-    /* --- MODIFICACIÓN DE FUENTE --- */
-    font-family: "Segoe UI Variable", sans-serif; /* <-- FUENTE SUGERIDA */
-    font-size: 15px; /* <-- TAMAÑO BASE AUMENTADO */
+    /* --- iOS 26 FUENTE --- */
+    font-family: "SF Pro Display", "Segoe UI Variable", -apple-system, sans-serif;
+    font-size: 15px; /* Tamaño base optimizado para legibilidad */
     /* --- FIN MODIFICACIÓN --- */
 }
 
 QMainWindow {
-    background-color: #F2F2F7; /* Fondo claro de toda la app */
+    background-color: #F5F5F7; /* Fondo claro iOS 26 - más suave */
 }
 
 QMainWindow[theme="dark"] {
-    background-color: #0D0D0D; /* Vacío Profundo */
+    background-color: #000000; /* Negro puro iOS 26 */
 }
 
 /* 🔧 FIX herencia global en modo oscuro (texto/fondos genéricos) */
@@ -31,59 +32,59 @@ QMainWindow[theme="dark"] QLabel {
 }
 
 /* ──────────────────────────────────────────────────────────────
-   📚  SIDEBAR (barra lateral)
-   - Ajusta colores y borde lateral.
+   📚  SIDEBAR (barra lateral) - iOS 26 Glass Effect
+   - Efecto vidriado más pronunciado
+   - Bordes más suaves
 ────────────────────────────────────────────────────────────── */
 QWidget[class="Sidebar"] {
-    background-color: rgba(250, 250, 250, 0.72); /* Vidriado claro */
-    /* border-right: 1px solid #E5E5EA; */ /* <-- BORDE ELIMINADO */
+    background-color: rgba(255, 255, 255, 0.78); /* Vidriado iOS 26 */
+    /* Sin borde para look más limpio */
 }
 
 QMainWindow[theme="dark"] QWidget[class="Sidebar"] {
-    background-color: rgba(28, 28, 30, 0.65); /* Aero-Glass más translúcido */
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(28, 28, 30, 0.72); /* Vidrio oscuro iOS 26 */
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 /* ──────────────────────────────────────────────────────────────
-   🧭  NAVIGATION LIST (menú de secciones)
-   - Cambia la selección/hover y el padding de cada item.
+   🧭  NAVIGATION LIST (menú de secciones) - iOS 26 Pills
+   - Pastillas más redondeadas y suaves
+   - Efectos hover más sutiles
 ────────────────────────────────────────────────────────────── */
 QListWidget[class="NavList"] {
     background-color: transparent;
     border: none;
     outline: none;
-    padding: 5px;
-    /* icon-size: 20px; */ /* Comentado/Eliminado si usas Emojis */
+    padding: 8px;
 }
 
 QListWidget[class="NavList"]::item {
     background-color: transparent;
-    color: #000000;
-    border-radius: 10px; /* ← Radio de las pastillas del menú */
-    padding: 12px 16px; /* ← Altura y anchura de cada item */
-    /* padding-left: 10px; */ /* Comentado/Eliminado si usas Emojis */
-    margin: 3px 0px;
-    font-size: 15px; /* ← Tamaño del texto del menú */
+    color: #1D1D1F;
+    border-radius: 14px; /* Bordes más redondeados iOS 26 */
+    padding: 14px 18px; /* Más espaciado */
+    margin: 4px 6px;
+    font-size: 15px;
+    font-weight: 500;
 }
 
-/* [MODIFICADO] Hover usa el tinte primario */
+/* Hover más sutil y suave */
 QListWidget[class="NavList"]::item:hover {
-    background-color: rgba(160, 191, 110, 0.15); /* Tinte verde primario */
+    background-color: rgba(160, 191, 110, 0.15); /* Hover verde corporativo */
 }
 
 QListWidget[class="NavList"]::item:selected {
-    background-color: #A0BF6E; /* Color destacado seleccionado */
+    background-color: #A0BF6E; /* Verde corporativo */
     color: white;
     font-weight: 600;
 }
 
 QMainWindow[theme="dark"] QListWidget[class="NavList"]::item {
-    color: #FFFFFF;
+    color: #F5F5F7;
 }
 
-/* [MODIFICADO] Hover usa el tinte primario (oscuro) */
 QMainWindow[theme="dark"] QListWidget[class="NavList"]::item:hover {
-    background-color: rgba(10, 132, 255, 0.15); /* Tinte azul primario oscuro */
+    background-color: rgba(255, 255, 255, 0.08);
 }
 
 QMainWindow[theme="dark"] QListWidget[class="NavList"]::item:selected {
@@ -95,81 +96,80 @@ QMainWindow[theme="dark"] QListWidget[class="NavList"]::item:selected {
    🧱  CONTENT STACK (zona principal)
    ────────────────────────────────────────────────────────────── */
 QStackedWidget[class="ContentStack"] {
-    background-color: #F2F2F7;
+    background-color: #F5F5F7;
 }
 
 QMainWindow[theme="dark"] QStackedWidget[class="ContentStack"] {
     background-color: #000000;
 }
 
-/* [NUEVA CORRECCIÓN] Forzar estilo del QSplitter para ocultar cualquier borde/fondo residual */
+/* Splitter con fondo limpio */
 QSplitter {
-    background-color: #F2F2F7; /* Mismo color que ContentStack */
-    border: none; /* Asegurar que no tenga borde propio */
+    background-color: #F5F5F7;
+    border: none;
 }
 
 QMainWindow[theme="dark"] QSplitter {
-    background-color: #000000; /* Mismo color que ContentStack (oscuro) */
+    background-color: #000000;
     border: none;
 }
 
-/* [REVISADO] FIX QSplitter handle (haciéndolo completamente invisible) */
+/* Handle completamente invisible */
 QSplitter::handle {
     background: transparent;
     border: none;
-    width: 0px;              /* Ancho explícito 0 */
+    width: 0px;
     margin: 0;
     padding: 0;
-    image: none;             /* Sin imagen de fondo */
+    image: none;
 }
-/* No necesitamos la regla específica para dark si es transparente */
 
 
 /* ──────────────────────────────────────────────────────────────
-   🧮  STAT CARDS (tarjetas de métricas)
-   - Ajusta el borde, radio y relleno.
+   🧮  STAT CARDS (tarjetas de métricas) - iOS 26 Elevated Cards
+   - Bordes más redondeados (18-20px)
+   - Efecto vidrio mejorado
+   - Sin bordes para look más limpio
 ────────────────────────────────────────────────────────────── */
 QFrame[class="StatCard"] {
-    background-color: rgba(255, 255, 255, 0.88); /* Vidriado */
-    border-radius: 16px; /* ← Radio de las tarjetas */
-    padding: 20px; /* ← Relleno interno de las tarjetas */
-    /* [MODIFICADO] Borde eliminado para efecto "flotante" */
-    /* border: 1px solid #E5E5EA; */
+    background-color: rgba(255, 255, 255, 0.92); /* Vidrio más opaco */
+    border-radius: 20px; /* Bordes más redondeados iOS 26 */
+    padding: 24px; /* Más espaciado interno */
+    border: none; /* Sin borde para efecto flotante */
 }
 
 QMainWindow[theme="dark"] QFrame[class="StatCard"] {
-    background-color: rgba(44, 44, 46, 0.60); /* Aero-Glass */
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 22px;
+    background-color: rgba(28, 28, 30, 0.72); /* Vidrio oscuro */
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
 }
 
 /* ──────────────────────────────────────────────────────────────
-   🔘  ANIMATED BUTTON (botón primario)
-   - Cambia colores, radio y tamaños.
+   🔘  ANIMATED BUTTON (botón primario) - Estilo corporativo
+   - Colores corporativos (verde)
+   - Tamaño original optimizado
 ────────────────────────────────────────────────────────────── */
 QPushButton[class="AnimatedButton"] {
-    background-color: #A0BF6E; /* ← Color base del botón */
+    background-color: #A0BF6E; /* Verde corporativo */
     color: white;
-    border-radius: 12px;       /* ← Radio del botón */
-    /* padding: 12px 24px; */ /* <-- Valor anterior */
-    padding: 10px 24px; /* Padding vertical reducido */
+    border-radius: 12px; /* Bordes redondeados */
+    padding: 10px 24px; /* Padding original */
     font-weight: 600;
     font-size: 15px;
 }
 
-/* [MODIFICADO] El hover lo maneja la animación, pero dejamos un fallback */
+/* Hover más sutil */
 QPushButton[class="AnimatedButton"]:hover {
-    background-color: #87a15D; /* ← Color al pasar el ratón */
+    background-color: #87A15D; /* Verde más oscuro */
 }
 
 QPushButton[class="AnimatedButton"]:pressed {
-    background-color: #7A9154; /* ← Color al hacer click */
+    background-color: #7A9154; /* Verde presionado */
 }
 
 QPushButton[class="AnimatedButton"]:disabled {
-    background-color: #C7C7CC;
-    color: #8E8E93;
-    /* La lógica de deshabilitar sombra debe ir en Python */
+    background-color: #E5E5EA;
+    color: #AEAEB2;
 }
 
 QMainWindow[theme="dark"] QPushButton[class="AnimatedButton"] {
@@ -178,12 +178,12 @@ QMainWindow[theme="dark"] QPushButton[class="AnimatedButton"] {
 }
 
 QMainWindow[theme="dark"] QPushButton[class="AnimatedButton"]:hover {
-    background-color: #4FB6E8; /* Tono más oscuro para hover */
+    background-color: #4FB6E8;
 }
 
 QMainWindow[theme="dark"] QPushButton[class="AnimatedButton"]:disabled {
     background-color: #3A3A3C;
-    color: #48484A;
+    color: #636366;
 }
 
 /* ──────────────────────────────────────────────────────────────
@@ -191,12 +191,12 @@ QMainWindow[theme="dark"] QPushButton[class="AnimatedButton"]:disabled {
    - “success”, “warning” y “error” (en tu CSS usabas “NABO!” para error).
 ────────────────────────────────────────────────────────────── */
 QLabel[class="StatusChip"] {
-    border-radius: 13px;
-    padding: 4px 14px;
+    border-radius: 14px;
+    padding: 6px 16px;
     font-weight: 600;
-    font-size: 12px;
-    min-width: 80px;
-    max-height: 26px;
+    font-size: 13px;
+    min-width: 90px;
+    max-height: 28px;
 }
 
 QLabel[class="StatusChip"][status="success"] {
@@ -205,7 +205,7 @@ QLabel[class="StatusChip"][status="success"] {
 }
 
 QLabel[class="StatusChip"][status="warning"] {
-    background-color: #FF9500;
+    background-color: #FF9F0A;
     color: white;
 }
 
@@ -223,7 +223,7 @@ QTableWidget[class="ModernTable"] {
     border: none;                            /* sin borde propio */
     border-radius: 16px;
     gridline-color: #F2F2F7;
-    selection-background-color: rgba(160, 191, 110, 0.2); /* Tinte primario */
+    selection-background-color: rgba(160, 191, 110, 0.15); /* Tinte primario */
     outline: none;
 }
 
@@ -240,12 +240,12 @@ QTableWidget[class="ModernTable"]::item {
 }
 
 QTableWidget[class="ModernTable"]::item:selected {
-    background-color: rgba(160, 191, 110, 0.3); /* Tinte primario */
+    background-color: rgba(160, 191, 110, 0.25); /* Tinte primario */
 }
 
 /* [MEJORA UI] Hover más evidente */
 QTableWidget[class="ModernTable"]::item:hover {
-    background-color: rgba(160, 191, 110, 0.15); /* Tinte primario (un poco más opaco) */
+    background-color: rgba(160, 191, 110, 0.12); /* Tinte primario (un poco más opaco) */
 }
 
 QTableWidget[class="ModernTable"] QHeaderView::section {
@@ -317,21 +317,22 @@ QMainWindow[theme="dark"] QTableCornerButton::section {
 ────────────────────────────────────────────────────────────── */
 QLineEdit {
     background-color: white;
-    border: 1px solid #E5E5EA;
-    border-radius: 10px; /* ← Radio de inputs */
-    padding: 10px 14px; /* ← Relleno interno */
+    border: 1px solid #D1D1D6;
+    border-radius: 12px; /* ← Radio de inputs */
+    padding: 12px 16px; /* ← Relleno interno */
     color: #000000;
     font-size: 15px;
 }
 
-/* [MODIFICADO] Foco más sutil, usando 1px del color primario */
+/* [MODIFICADO] Foco más sutil, usando border más grueso del color primario */
 QLineEdit:focus {
-    border: 1px solid #A0BF6E;
-    padding: 10px 14px; /* Mismo padding, sin salto */
+    border: 2px solid #A0BF6E;  /* Border más grueso en focus */
+    padding: 11px 15px; /* Ajustado para compensar border */
 }
 
+
 QLineEdit::placeholder {
-    color: #8E8E93;
+    color: #86868B;
 }
 
 QMainWindow[theme="dark"] QLineEdit {
@@ -340,10 +341,10 @@ QMainWindow[theme="dark"] QLineEdit {
     color: #FFFFFF;
 }
 
-/* [MODIFICADO] Foco más sutil (oscuro) */
+/* [MODIFICADO] Foco más sutil (oscuro) - border más grueso */
 QMainWindow[theme="dark"] QLineEdit:focus {
-    border: 1px solid #0A84FF;
-    padding: 10px 14px;
+    border: 2px solid #0A84FF;
+    padding: 11px 15px;  /* Ajustado para compensar border */
 }
 
 QMainWindow[theme="dark"] QLineEdit::placeholder {
@@ -355,8 +356,8 @@ QMainWindow[theme="dark"] QLineEdit::placeholder {
    ────────────────────────────────────────────────────────────── */
 QTextEdit {
     background-color: white;
-    border: 1px solid #E5E5EA;
-    border-radius: 10px;
+    border: 1px solid #D1D1D6;
+    border-radius: 12px;
     padding: 10px;
     color: #000000;
     font-size: 13px;
@@ -407,7 +408,7 @@ QCheckBox::indicator {
     width: 20px; /* ← Tamaño del cuadrado */
     height: 20px;
     border-radius: 6px; /* ← Radio del cuadrado */
-    border: 2px solid #C7C7CC;
+    border: 2px solid #D1D1D6;
     background-color: white;
 }
 
@@ -437,7 +438,7 @@ QMainWindow[theme="dark"] QCheckBox::indicator:checked {
    ────────────────────────────────────────────────────────────── */
 QPushButton[filter="true"] {
     border: none;
-    border-radius: 10px; /* ← Radio de las pastillas de filtro */
+    border-radius: 12px; /* ← Radio de las pastillas de filtro */
     padding: 8px 16px;
     font-weight: 600;
     color: white;
@@ -449,7 +450,7 @@ QPushButton[filter="true"][status="ÉXITO"] {
 }
 
 QPushButton[filter="true"][status="DUPLICADO"] {
-    background-color: #FF9500;
+    background-color: #FF9F0A;
 }
 
 QPushButton[filter="true"][status="ERROR"] {
@@ -480,7 +481,7 @@ QLabel[class="StepCircle"] {
 
 QLabel[class="StepCircle"][state="pending"] {
     background-color: #E5E5EA;
-    color: #8E8E93;
+    color: #86868B;
     border: 2px solid #E5E5EA;
 }
 
@@ -514,8 +515,8 @@ QMainWindow[theme="dark"] QLabel[class="StepCircle"][state="completed"] {
 
 
 QLabel[class="StepLabel"] {
-    color: #8E8E93;
-    font-size: 12px; /* ← Tamaño del texto bajo el círculo */
+    color: #86868B;
+    font-size: 13px; /* ← Tamaño del texto bajo el círculo */
     font-weight: 500;
     margin-top: 5px;
 }
@@ -570,7 +571,7 @@ QToolButton {
 }
 
 QToolButton:hover {
-    background-color: rgba(160, 191, 110, 0.15); /* Tinte primario */
+    background-color: rgba(160, 191, 110, 0.12); /* Tinte primario */
 }
 
 QMainWindow[theme="dark"] QToolButton:hover {
@@ -612,7 +613,7 @@ QInputDialog[theme="dark"] {
 QMessageBox QPushButton, QInputDialog QPushButton {
     background-color: #E5E5EA;
     color: #000000;
-    border-radius: 10px;
+    border-radius: 12px;
     padding: 8px 18px;
     font-weight: 600;
 }
@@ -639,7 +640,7 @@ QDialog QCheckBox { color: inherit; }
 
 QDialog QLineEdit {
     background-color: #FFFFFF;
-    border: 1px solid #E5E5EA;
+    border: 1px solid #D1D1D6;
     color: #000000;
 }
 QMainWindow[theme="dark"] QDialog QLineEdit,
@@ -683,13 +684,13 @@ QScrollBar:vertical {
 }
 
 QScrollBar::handle:vertical {
-    background: #C7C7CC;
+    background: #D1D1D6;
     border-radius: 5px;
     min-height: 20px;
 }
 
 QScrollBar::handle:vertical:hover {
-    background: #8E8E93;
+    background: #86868B;
 }
 
 QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
@@ -751,7 +752,7 @@ QMainWindow[theme="dark"] QFrame[class="ConfigGroup"] {
 /* [NUEVO] Contenedor para tablas con esquinas redondeadas visibles */
 QFrame[class="TableCard"] {
     background-color: rgba(255, 255, 255, 0.88);
-    border: 1px solid #E5E5EA;
+    border: 1px solid #D1D1D6;
     border-radius: 16px;
     padding: 0px; /* La tabla llena el contenedor */
 }
@@ -766,7 +767,7 @@ QPushButton {
     background-color: #E5E5EA;
     color: #000000;
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
     /* padding: 10px 18px; */ /* <-- Valor anterior */
     padding: 8px 18px; /* Padding vertical reducido */
     font-weight: 600;
@@ -786,8 +787,8 @@ QMainWindow[theme="dark"] QPushButton:hover {
 /* [NUEVO] QComboBox (campo + popup) */
 QComboBox {
     background-color: white;
-    border: 1px solid #E5E5EA;
-    border-radius: 10px;
+    border: 1px solid #D1D1D6;
+    border-radius: 12px;
     padding: 8px 12px;
     color: #000000;
     font-size: 14px;
@@ -806,8 +807,8 @@ QComboBox::down-arrow {
 }
 QComboBox QAbstractItemView {
     background: white;
-    border: 1px solid #E5E5EA;
-    selection-background-color: rgba(160, 191, 110, 0.2); /* Tinte primario */
+    border: 1px solid #D1D1D6;
+    selection-background-color: rgba(160, 191, 110, 0.15); /* Tinte primario */
 }
 
 QMainWindow[theme="dark"] QComboBox {
@@ -852,7 +853,7 @@ QToolTip {
     border: 1px solid rgba(0, 0, 0, 0.2);
     padding: 6px 10px;
     border-radius: 8px;
-    font-size: 12px;
+    font-size: 13px;
 }
 QMainWindow[theme="dark"] QToolTip {
     background-color: rgba(58, 58, 60, 0.95);
@@ -872,19 +873,19 @@ QDialog[theme="dark"] QFrame#LoginCard { /* Asegurar que funcione en el diálogo
 /* [NUEVO] Estilo para el botón "Cancelar" del login */
 QPushButton[class="LinkButton"] {
     background-color: transparent;
-    color: #8E8E93;
+    color: #86868B;
     border: none;
     font-weight: 500;
     padding: 5px 10px;
 }
 QPushButton[class="LinkButton"]:hover {
     background-color: transparent;
-    color: #007AFF; /* Color de enlace hover */
+    color: #A0BF6E; /* Color de enlace hover */
     text-decoration: underline;
 }
 QMainWindow[theme="dark"] QPushButton[class="LinkButton"],
 QDialog[theme="dark"] QPushButton[class="LinkButton"] {
-    color: #8E8E93;
+    color: #86868B;
 }
 QMainWindow[theme="dark"] QPushButton[class="LinkButton"]:hover,
 QDialog[theme="dark"] QPushButton[class="LinkButton"]:hover {

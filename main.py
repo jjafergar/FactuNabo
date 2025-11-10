@@ -69,14 +69,14 @@ def format_eur(value) -> str:
     s = s.replace(",", "X").replace(".", ",").replace("X", ".")
     return f"{s}€"
 
-# [NUEVO] Helper para aplicar sombras
-def apply_shadow(widget, blur=20, offset_y=4, color_str="#000000"):
-    """Aplica un efecto de sombra sutil y moderno."""
+# [NUEVO] Helper para aplicar sombras iOS 26
+def apply_shadow(widget, blur=24, offset_y=6, color_str="#000000"):
+    """Aplica un efecto de sombra sutil estilo iOS 26."""
     shadow = QGraphicsDropShadowEffect(widget)
-    shadow.setBlurRadius(blur)
-    # Sombra muy suave (alfa bajo)
+    shadow.setBlurRadius(blur)  # Blur más suave
+    # Sombra muy suave iOS 26 (alfa muy bajo)
     color = QColor(color_str)
-    color.setAlpha(40)
+    color.setAlpha(25)  # Más sutil que antes
     shadow.setColor(color)
     shadow.setOffset(0, offset_y)
     widget.setGraphicsEffect(shadow)
@@ -113,21 +113,21 @@ def enable_windows_backdrop(win_id, dark_mode: bool = False):
         pass
 
 # --- Colores/Recursos ---
-COLOR_PRIMARY = "#A0BF6E"
-COLOR_SUCCESS = "#34C759"
-COLOR_WARNING = "#FF9500"
-COLOR_ERROR = "#FF3B30"
-COLOR_BACKGROUND = "#F2F2F7"
-COLOR_CARD = "#FFFFFF"
-COLOR_TEXT = "#000000"
-COLOR_SECONDARY_TEXT = "#8E8E93"
-COLOR_BORDER = "#C6C6C8"
-COLOR_SIDEBAR = "#FAFAFA"
-COLOR_SIDEBAR_DARK = "#1C1C1E"
-COLOR_DARK_BG = "#000000"
-COLOR_DARK_CARD = "#1C1C1E"
-COLOR_DARK_TEXT = "#FFFFFF"
-COLOR_DARK_BORDER = "#38383A"
+COLOR_PRIMARY = "#A0BF6E"      # Verde corporativo
+COLOR_SUCCESS = "#34C759"      # Verde iOS
+COLOR_WARNING = "#FF9F0A"      # Naranja iOS 26
+COLOR_ERROR = "#FF3B30"        # Rojo iOS
+COLOR_BACKGROUND = "#F5F5F7"   # Fondo claro
+COLOR_CARD = "#FFFFFF"         # Blanco puro
+COLOR_TEXT = "#1D1D1F"         # Negro suave
+COLOR_SECONDARY_TEXT = "#86868B"  # Gris secundario
+COLOR_BORDER = "#D1D1D6"       # Borde suave
+COLOR_SIDEBAR = "#FFFFFF"      # Sidebar blanco
+COLOR_SIDEBAR_DARK = "#1C1C1E" # Sidebar oscuro
+COLOR_DARK_BG = "#000000"      # Negro puro
+COLOR_DARK_CARD = "#1C1C1E"    # Card oscuro
+COLOR_DARK_TEXT = "#F5F5F7"    # Texto claro
+COLOR_DARK_BORDER = "#38383A"  # Borde oscuro
 
 RESOURCE_DIR = resource_path("resources")
 DB_PATH = resource_path("factunabo_history.db")
@@ -181,47 +181,47 @@ class AnimatedButton(QPushButton):
         super().__init__(*args, **kwargs)
         self.setProperty("class", "AnimatedButton")
 
-        # Sombra base
+        # Sombra base iOS 26 - más sutil
         self._shadow = QGraphicsDropShadowEffect(self)
-        self._shadow.setBlurRadius(18)
-        color = QColor(0, 0, 0, 60) # Usamos un color de sombra fijo y seguro
+        self._shadow.setBlurRadius(24)  # Blur más suave
+        color = QColor(0, 0, 0, 35)  # Sombra más sutil iOS 26
         self._shadow.setColor(color)
-        self._shadow.setOffset(0, 4)
+        self._shadow.setOffset(0, 6)  # Offset ligeramente mayor
         self.setGraphicsEffect(self._shadow)
 
         # Animación para el radio de la sombra (blur)
         self._anim_blur = QPropertyAnimation(self._shadow, b"blurRadius")
-        self._anim_blur.setDuration(180)
+        self._anim_blur.setDuration(200)  # Animación más suave
         self._anim_blur.setEasingCurve(QEasingCurve.OutCubic)
 
         # Animación para el offset (Y)
         self._anim_offset = QPropertyAnimation(self._shadow, b"yOffset")
-        self._anim_offset.setDuration(180)
+        self._anim_offset.setDuration(200)
         self._anim_offset.setEasingCurve(QEasingCurve.OutCubic)
 
     # --- [NUEVAS FUNCIONES HELPER] ---
     def _animate_hover_in(self):
-        """Animates the button shadow to the 'hover' state."""
+        """Animates the button shadow to the 'hover' state - iOS 26 style."""
         self._anim_blur.stop()
         self._anim_blur.setStartValue(self._shadow.blurRadius())
-        self._anim_blur.setEndValue(30)
+        self._anim_blur.setEndValue(32)  # Hover más pronunciado
         self._anim_blur.start()
 
         self._anim_offset.stop()
         self._anim_offset.setStartValue(self._shadow.yOffset())
-        self._anim_offset.setEndValue(6) # Sube un poco
+        self._anim_offset.setEndValue(8)  # Elevación mayor en hover
         self._anim_offset.start()
 
     def _animate_hover_out(self):
-        """Animates the button shadow to the 'normal' state."""
+        """Animates the button shadow to the 'normal' state - iOS 26 style."""
         self._anim_blur.stop()
         self._anim_blur.setStartValue(self._shadow.blurRadius())
-        self._anim_blur.setEndValue(18)
+        self._anim_blur.setEndValue(24)  # Vuelve al estado normal
         self._anim_blur.start()
 
         self._anim_offset.stop()
         self._anim_offset.setStartValue(self._shadow.yOffset())
-        self._anim_offset.setEndValue(4)
+        self._anim_offset.setEndValue(6)  # Vuelve al offset normal iOS 26
         self._anim_offset.start()
     # --- [FIN DE FUNCIONES HELPER] ---
 

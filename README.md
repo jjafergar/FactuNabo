@@ -1,2 +1,113 @@
 # FactuNabo
-Programa para emitir Facturas via API
+
+Programa moderno para emitir y gestionar facturas con interfaz modernizada.
+
+## ✨ Características de Diseño
+
+La aplicación implementa principios de diseño modernos con identidad corporativa:
+
+### 🎨 Diseño Visual
+- **Minimalismo**: Interfaz limpia sin elementos innecesarios
+- **Colores corporativos**: 
+  - Verde primario: `#A0BF6E` (Color corporativo)
+  - Verde: `#34C759` (Success)
+  - Naranja: `#FF9F0A` (Warning modernizado)
+  - Rojo: `#FF3B30` (Error)
+- **Esquinas redondeadas**: Bordes de 12-20px para mayor suavidad
+- **Efecto vidrio**: Backgrounds translúcidos con blur (glassmorphism)
+- **Sombras sutiles**: Sombras con alpha bajo para profundidad sutil
+
+### 🔤 Tipografía
+- Fuente similar a **SF Pro Display/Text** de Apple
+- Tamaños optimizados para legibilidad
+- Pesos de fuente variados (500-600) para jerarquía visual
+
+### 📐 Espaciado
+- Padding generoso en componentes (14-24px)
+- Márgenes amplios entre elementos
+- Altura de botones de 48-50px (guías de accesibilidad Apple)
+
+### 🎭 Animaciones
+- Transiciones suaves de 200ms
+- Easing curves de tipo `OutCubic`
+- Efectos de elevación en hover (sombras animadas)
+- Animaciones fluidas en navegación
+
+### 🌓 Modo Oscuro
+- Soporte completo para tema oscuro
+- Negro puro `#000000` de fondo (OLED friendly)
+- Contraste optimizado para visión nocturna
+
+## 🚀 Funcionalidades
+
+- 📄 **Gestión de facturas**: Crear, visualizar y gestionar facturas
+- 📊 **Dashboard**: Métricas y estadísticas en tiempo real
+- 📜 **Histórico**: Registro completo de envíos
+- 🔐 **Login seguro**: Sistema de autenticación
+- 💾 **Persistencia**: Base de datos SQLite
+- 📁 **Importación**: Soporte para archivos Excel (.xlsm)
+
+## 📋 Requisitos
+
+- Python 3.8 o superior
+- Windows 10/11 (para efectos Acrylic/Mica opcionales)
+
+## 🔧 Instalación
+
+1. Clona el repositorio:
+```bash
+git clone https://github.com/jjafergar/FactuNabo.git
+cd FactuNabo
+```
+
+2. Instala las dependencias:
+```bash
+pip install -r requirements.txt
+```
+
+## 💻 Uso
+
+Ejecuta la aplicación:
+
+```bash
+python main.py
+```
+
+## 🎨 Paleta de Colores
+
+| Color | Hex | Uso |
+|-------|-----|-----|
+| Verde corporativo | `#A0BF6E` | Botones primarios, elementos seleccionados |
+| Verde | `#34C759` | Éxito, confirmaciones |
+| Naranja | `#FF9F0A` | Advertencias |
+| Rojo | `#FF3B30` | Errores, acciones destructivas |
+| Fondo claro | `#F5F5F7` | Background principal |
+| Texto primario | `#1D1D1F` | Texto principal |
+| Texto secundario | `#86868B` | Texto de apoyo |
+
+## 📁 Estructura
+
+```
+FactuNabo/
+├── main.py                 # Aplicación principal con UI iOS 26
+├── styles.qss             # Estilos CSS modernos
+├── worker.py              # Procesamiento asíncrono
+├── macro_adapter.py       # Adaptador para Excel
+├── login_dialog.py        # Diálogo de login
+├── modern_dialogs.py      # Diálogos modernos
+├── pdf_downloader.py      # Descarga de PDFs
+├── requirements.txt       # Dependencias
+├── resources/             # Recursos (iconos, logos)
+└── Plantillas Facturas/   # Plantillas de facturas
+```
+
+## 🛠️ Tecnologías
+
+- **PySide6**: Framework Qt para interfaces modernas
+- **SQLite**: Base de datos embebida
+- **Pandas**: Procesamiento de datos
+- **OpenPyXL**: Manejo de archivos Excel
+
+## 📝 Licencia
+
+Proyecto de código abierto.
