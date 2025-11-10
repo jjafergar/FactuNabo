@@ -324,11 +324,12 @@ QLineEdit {
     font-size: 15px;
 }
 
-/* [MODIFICADO] Foco más sutil, usando 1px del color primario */
+/* [MODIFICADO] Foco más sutil, usando border más grueso del color primario */
 QLineEdit:focus {
-    border: 1px solid #A0BF6E;
-    padding: 12px 16px; /* Mismo padding, sin salto */
+    border: 2px solid #A0BF6E;  /* Border más grueso en focus */
+    padding: 11px 15px; /* Ajustado para compensar border */
 }
+
 
 QLineEdit::placeholder {
     color: #86868B;
@@ -340,10 +341,10 @@ QMainWindow[theme="dark"] QLineEdit {
     color: #FFFFFF;
 }
 
-/* [MODIFICADO] Foco más sutil (oscuro) */
+/* [MODIFICADO] Foco más sutil (oscuro) - border más grueso */
 QMainWindow[theme="dark"] QLineEdit:focus {
-    border: 1px solid #0A84FF;
-    padding: 12px 16px;
+    border: 2px solid #0A84FF;
+    padding: 11px 15px;  /* Ajustado para compensar border */
 }
 
 QMainWindow[theme="dark"] QLineEdit::placeholder {
